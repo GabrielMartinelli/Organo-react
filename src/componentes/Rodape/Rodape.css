@@ -1,0 +1,25 @@
+.rodapeFinal {
+  background-image: url(../../../public/img/fundo.png);
+  background-color: #6278f7;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.rodapeFinal div {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  margin: 38px 0;
+}
+
+.rodapeFinal div a {
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.rodapeFinal p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+}
