@@ -1,25 +1,33 @@
-import "./Rodape.css";
+import "./rodape.css";
 
 const Rodape = () => {
   return (
-    <footer className="rodapeFinal">
-      <div>
-        <a>
-          <img src="img/fb.png" alt="Logo do facebook"></img>
-        </a>
-        <a>
-          <img src="img/tw.png" alt="Logo do Twiter"></img>
-        </a>
-        <a>
-          <img src="img/ig.png" alt="Logo do Instagran"></img>
-        </a>
-      </div>
-      <div>
-        <img src="img/logo.png"></img>
-      </div>
-      <div>
-        <p>Desenvolvido por Alura</p>
-      </div>
+    <footer className="footer">
+      <section>
+        <ul>
+          <li>
+            <a href="facebook.com" target="_blank">
+              <img src="/img/fb.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="twitter.com" target="_blank">
+              <img src="/img/tw.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="instagram.com" target="_blank">
+              <img src="/img/ig.png" alt="" />
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <img src="/img/logo.png" alt="" />
+      </section>
+      <section>
+        <p>Desenvolvido por Alura.</p>
+      </section>
     </footer>
   );
 };
