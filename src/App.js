@@ -242,7 +242,10 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState(inicial);
 
+  const [aparecerElemento, setAparecerElemento] = useState(false);
+
   function resolverFavorito(id) {
+    console.log(id);
     setColaboradores(
       colaboradores.map((colaborador) => {
         if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
@@ -252,7 +255,7 @@ function App() {
   }
 
   function deletarColaborador(id) {
-    setColaboradores(colaboradores.filter((colaborador) => colaborador.id != id));
+    setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id));
   }
 
   function mudarCorDoTime(cor, id) {
@@ -270,16 +273,32 @@ function App() {
     setTimes([...times, { ...novoTime, id: uuidv4() }]);
   }
 
+  const aparecerOuEsconder = () => {
+    setAparecerElemento(!aparecerElemento);
+  };
+
   return (
     <div>
       <Banner />
-      <Formulario
-        cadastrarTime={cadastrarTime}
-        times={times.map((time) => time.nome)}
-        aoCadastrar={(colaborador) => setColaboradores([...colaboradores, colaborador])}
-      />
+      {aparecerElemento && (
+        <Formulario
+          cadastrarTime={cadastrarTime}
+          times={times.map((time) => time.nome)}
+          aoCadastrar={(colaborador) => setColaboradores([...colaboradores, colaborador])}
+        />
+      )}
+
       <section className="times">
-        <h1>Minha organização</h1>
+        <div className="organizacao">
+          <h1>Minha organização</h1>
+          <img
+            onClick={aparecerOuEsconder}
+            alt="icone azul para exibir ou esconder formulario"
+            className="img-organizacao"
+            src="/img/add.png"
+          ></img>
+        </div>
+
         {times.map((time, indice) => (
           <Time
             aoFavoritar={resolverFavorito}
